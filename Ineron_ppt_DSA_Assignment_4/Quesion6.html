@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sortedSquares(nums) {
+  const result = [];
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    const leftSquare = nums[left] * nums[left];
+    const rightSquare = nums[right] * nums[right];
+
+    if (leftSquare > rightSquare) {
+      result.unshift(leftSquare);
+      left++;
+    } else {
+      result.unshift(rightSquare);
+      right--;
+    }
+  }
+
+  return result;
+}
+const nums = [-4, -1, 0, 3, 10];
+const squaredArray = sortedSquares(nums);
+document.write("The ans. is a "+squaredArray);
+
+    </script>
+</body>
+</html>

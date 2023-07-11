@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function arrangeCoins(n) {
+  let left = 0;
+  let right = n;
+  
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    const curr = mid * (mid + 1) / 2;
+    
+    if (curr === n) {
+      return mid;
+    } else if (curr < n) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+  
+  return right; 
+}
+
+
+const n = 5;
+const completeRows = arrangeCoins(n);
+document.write("The ans is a "+completeRows);
+
+    </script>
+</body>
+</html>
